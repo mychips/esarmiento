@@ -10,19 +10,33 @@ export class InfoPageService {
   info: InfoPage = {};
   load = false;
 
+  team: any[] = [];
+
   constructor( private http: HttpClient) {
 
-    // console.log('Sercicio de pagina listo');
+    this.loadInfo();
+    this.loadTeam();
+  }
+
+  private loadInfo(){
 
     // leer el archivo JSON
     this.http.get('assets/data/data-page.json')
-      .subscribe( resp => {
+      .subscribe( (resp: InfoPage) => {
 
         this.load = true;
         this.info = resp;
-        console.log( resp );
-
       });
+  }
 
+  private loadTeam(){
+
+    // leer el archivo JSON
+    this.http.get('https://porta-mychip.firebaseio.com/equipo.json')
+      .subscribe( (resp: any[]) => {
+
+        this.team = resp;
+        // console.log( resp );
+      });
   }
 }
