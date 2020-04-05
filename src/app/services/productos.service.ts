@@ -18,10 +18,14 @@ export class ProductosService {
 
     this.http.get('https://porta-mychip.firebaseio.com/productos_idx.json')
       .subscribe( ( resp: Product[]) => {
-
-        console.log(resp);
         this.products = resp;
         this.loading = false;
       });
+  }
+
+  getProduct( id: string ) {
+
+    return this.http.get(`https://porta-mychip.firebaseio.com/productos/${ id }.json`)
+
   }
 }
