@@ -12,9 +12,9 @@
           <h2 class="rk-portfolio-inner-title ">{{ product.subtitulo1 }}</h2>
         </div>
         <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right rk-portfolio-details">
-          <p class="rk-portfolio-inner-client "><span class="ae-lambda">Client: </span><span class="ae-u-bolder">Agency Design Studio</span></p>
-          <p class="au-underline rk-portfolio-inner-website "><a href="#0" class="ae-kappa">www.agencydesign.com</a></p>
-          <p class="ae-kappa ae-u-bold rk-portfolio-inner-date ">12 August, 2015</p>
+          <p class="rk-portfolio-inner-client "><span class="ae-lambda">Client: </span><span class="ae-u-bolder">{{ product.client }}</span></p>
+          <p class="au-underline rk-portfolio-inner-website "><a target="_blank" href="{{ product.url }}" class="ae-kappa">Link a la pagina</a></p>
+          <p class="ae-kappa ae-u-bold rk-portfolio-inner-date ">{{ product.createDate }}</p>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@
         <div class="ae-grid__item item-lg-5 au-lg-ptp-1">
           <h4 class="ae-u-bolder">{{ product.subtitulo2 }}</h4>
           <p class="ae-eta">{{ product.desc1 }}</p>
-          <p class="ae-eta">It includes a A6 flyer, A5 folder, A4 horizontal paper and a business card mockup.</p>
+          <p class="ae-eta">{{ product.resumen }}</p>
         </div>
         <div class="ae-grid__item item-lg-6 item-lg--offset-1">
           <img src="assets/products/{{ id }}/pic-1.jpg" alt="Urku Portfolio">
@@ -35,7 +35,7 @@
         </div>
         <div class="ae-grid__item item-lg-3 item-lg--offset-1 au-lg-ptp-1">
           <p>{{ product.desc2 }}</p>
-          <p class="au-mb-3">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <p class="au-mb-3"></p>
           <p class="ae-u-bolder">{{ product.subtitulo2 }}</p>
         </div>
       </div>

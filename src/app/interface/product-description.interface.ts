@@ -6,4 +6,7 @@ export interface ProductDescription {
   resumen: string;
   subtitulo1: string;
   subtitulo2: string;
+  url: string;
+  client: string;
+  createDate: string;
 }
